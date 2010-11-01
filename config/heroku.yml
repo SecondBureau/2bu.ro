@@ -1,0 +1,5 @@
+apps:
+  # shorthand: heroku app
+  production: production-2buro
+  #staging: awesomeapp-staging
+  demo: demo-2buro
