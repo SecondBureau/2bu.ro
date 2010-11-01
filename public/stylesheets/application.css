@@ -1,0 +1,66 @@
+
+html, a, h1, h2, h3, p, ol, ul, li, * { padding:0; font-family: verdana, arial, helvetica, sans-serif; font-size: 13px; line-height: 18px;}
+body {min-height:600px;
+	margin:0 auto;
+  background: #ffffff; /* for non-css3 browsers */
+  filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#23364e', endColorstr='#ffffff'); /* for IE */
+  background: -webkit-gradient(linear, left top, left bottom, from(#23364e), to(#ffffff)); /* for webkit browsers */
+  background: -moz-linear-gradient(top,  #23364e,  #ffffff); /* for firefox 3.6+ */
+  
+  }
+.wrapper {width:80%; margin: 0 auto; padding:0; font-size:1.0em; font-family:"Trebuchet MS", Verdana, Arial;}
+.header {height:80px;padding:20px 0 10px 0;}
+.main {min-height:600px; background:#ffffff;  border:2px solid #23364e; padding:20px;}
+.main .top {}
+.main .content {}
+.main .bottom {}
+.footer {min-height:200px;}
+
+/** page elements **/
+a { color:#426692; }
+a:hover { color:#23364E; }
+h1 { font-size:2.0em; padding-left:30px; margin:0 auto; }
+h1 a {font-size:2.0em;  color:#C3A279; font-family:Georgia, "Times New Roman", Times, serif; text-decoration:none; }
+h1 a:hover { color:#C3A279; border-bottom:1px solid #C3A279;}
+h1.logo {vertical-align:bottom;margin-top:30px;}
+h2 {margin:0 auto; color:#944267;font-family:Georgia, "Times New Roman", Times, serif;font-size:1.65em;font-weight:normal;padding:0 0 0 10px;}
+h3 {padding:20px 10px 0px 10px;font-family:Arial, Helvetica, sans-serif;letter-spacing:-1px;font-weight:normal;color:#283E59;font-size:1.1em;}
+ul, ol {margin:0 0 0 45px;padding:0;}
+p {font-family:"Trebuchet MS", Verdana, Arial;line-height:1.6em;}
+
+/** errors & notices **/
+#demo_info {display:none; position:fixed; top:0px; left:0px; height:30px; padding-top:10px; width:100%; background: #e9a523; border:solid 1px #b0140c; color: white; text-align:center; font-size:16px;}
+#notice { color: green;}
+.field_with_errors { padding: 2px; background-color: red;display: table;}
+#error_explanation { width: 450px; border: 2px solid red; padding: 7px;padding-bottom: 0; margin-bottom: 20px;background-color: #f0f0f0;}
+#error_explanation h2 { text-align: left; font-weight: bold; padding: 5px 5px 5px 15px; font-size: 12px; margin: -7px; margin-bottom: 0px; background-color: #c00; color: #fff;}
+#error_explanation ul li { font-size: 12px; list-style: square;}
+
+/** Forms **/
+div.field, div.actions { margin-bottom: 10px;}
+.formBoxContainer {
+	width:600px;
+	height:150px; 
+	background:lightgrey; 
+	border:solid 1px grey; 
+	text-align:left; 
+	line-height: 100%;
+  font-weight: bold;
+  color: #e7e5e5;
+  text-decoration: none;
+  display: block;
+  padding:  8px 20px;
+  margin: 0;
+  -webkit-border-radius: 1.6em;
+  -moz-border-radius: 1.6em;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, .3);
+  background: #d1d1d1; /* for non-css3 browsers */
+  filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ebebeb', endColorstr='#a1a1a1'); /* for IE */
+  background: -webkit-gradient(linear, left top, left bottom, from(#ebebeb), to(#a1a1a1)); /* for webkit browsers */
+  background: -moz-linear-gradient(top,  #ebebeb,  #a1a1a1); /* for firefox 3.6+ */
+  color: #444;
+  border-top: solid 1px #f8f8f8;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .2);
+  -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, .2);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, .2);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, .8);}

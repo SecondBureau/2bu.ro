@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  url: http://heroku.com/
+  permalink: perma1
+  visits_count: 5
+
+two:
+  url: http://aws.amazon.com/
+  permalink: perma2
+  visits_count: 6

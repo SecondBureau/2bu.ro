@@ -1,0 +1,32 @@
+%h1 Welcome to 2bu.ro
+%h2 
+  Url Shortener powered by
+  =link_to 'SecondBureau', 'http://secondbureau.com'
+  
+%br
+  
+.formBoxContainer
+  
+  = form_for(@redirection) do |f|
+    - if @redirection.errors.any?
+      #error_explanation
+        %h2 
+          = "#{pluralize(@redirection.errors.count, "error")} prohibited this Redirection from being saved:"
+        %ul
+          - @redirection.errors.full_messages.each do |msg|
+            %li= msg
+  
+    #field
+      Enter a long URL to shorten :
+      %br
+      = f.text_field :url, :class => 'url', :size => '50'
+      = f.submit
+      
+    #field
+      Custom alias (optional) : 
+      %br
+      http://2bu.ro/
+      = f.text_field :permalink, :class => 'permalink', :size => '20'
+      %br
+      May contain letters, numbers, and dashes.
+  

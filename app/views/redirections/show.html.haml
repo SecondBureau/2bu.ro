@@ -1,0 +1,14 @@
+%p
+  %b Url:
+  = @redirection.url
+
+%p
+  %b Code:
+  = @redirection.permalink
+
+
+
+= link_to 'Edit', edit_redirection_path(@redirection)
+|
+= link_to 'Back', redirections_path
+
