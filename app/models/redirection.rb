@@ -4,6 +4,7 @@ class Redirection < ActiveRecord::Base
   
   PERMALINK_LENGTH = 6
   PERMALINK_CHARS = 'abcdefghijklmnopqrstuvwxyz1234567890_'
+  URL_MAX_LENGTH = 50
   
   before_validation :unique_permalink
   before_validation :locked_unless_recent
@@ -11,6 +12,11 @@ class Redirection < ActiveRecord::Base
   validates_uri_existence_of :url, :with => /(^$)|(^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$)/ix
   before_save :set_default_values
   before_destroy :is_recent?
+  
+  def url_trunc
+    return url if url.nil? or url.length<URL_MAX_LENGTH
+    "#{url[0..URL_MAX_LENGTH]}..."
+  end
   
 private
   

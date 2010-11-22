@@ -1,7 +1,7 @@
 class RedirectionsController < ApplicationController
 
   def index
-    @redirections = Redirection.all
+    @redirections = Redirection.order('updated_at desc')
   end
 
   def show

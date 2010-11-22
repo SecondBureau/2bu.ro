@@ -5,8 +5,16 @@
 %p
   %b Code:
   = @redirection.permalink
+  
+%p
+  %b Short Url:
+  = link_to "http://#{request.env['HTTP_HOST']}/#{@redirection.permalink}", "http://#{request.env['HTTP_HOST']}/#{@redirection.permalink}"
 
 
+
+%p
+  %b Preview:
+  =raw "<img src=\"http://thumbnailspro.com/thumb.php?url=#{@redirection.url}\" border=\"0\" alt=\"website thumbnails\">"
 
 = link_to 'Edit', edit_redirection_path(@redirection)
 |

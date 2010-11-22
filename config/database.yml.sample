@@ -1,0 +1,16 @@
+login: &login
+  adapter: mysql
+  host: localhost
+  username: myuser
+  password: secret
+  database: mydb
+
+development:
+  <<: *login
+
+production:
+  <<: *login
+
+test:
+  database: mytestdb
+  <<: *login

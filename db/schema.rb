@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(:version => 20101101110929) do
   create_table "redirections", :force => true do |t|
     t.string   "url"
     t.string   "permalink"
-    t.integer  "visits_count"
+    t.integer  "visits_count", :default => 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
