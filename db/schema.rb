@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101101110929) do
+ActiveRecord::Schema.define(:version => 20101123034312) do
 
   create_table "redirections", :force => true do |t|
     t.string   "url"
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(:version => 20101101110929) do
     t.integer  "visits_count", :default => 0
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "title"
   end
 
   add_index "redirections", ["permalink"], :name => "index_redirections_on_permalink", :unique => true

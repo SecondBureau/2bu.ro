@@ -7,6 +7,10 @@
   = @redirection.permalink
   
 %p
+  %b Title:
+  = @redirection.title
+  
+%p
   %b Short Url:
   = link_to "http://#{request.env['HTTP_HOST']}/#{@redirection.permalink}", "http://#{request.env['HTTP_HOST']}/#{@redirection.permalink}"
 

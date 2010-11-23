@@ -3,6 +3,7 @@
 %table
   %tr
     %th url
+    %th title
     %th permalink
     %th Visits
     %th Last Visit
@@ -13,6 +14,7 @@
   - @redirections.each do |redirection|
     %tr
       %td= redirection.url_trunc
+      %td= redirection.title
       %td= link_to redirection.permalink, redirection.url, :class => :preview
       %td= redirection.visits_count
       %td= redirection.updated_at.strftime('%D %R') if redirection.visits_count > 0

@@ -41,7 +41,7 @@ var preview = {
         errorTimer:null,
         hidden:true,
         linkPool: {},
-        baseURI: "./",
+        baseURI: "/images/",
         imageCache: [],
         init: function() {
                 var lnks = document.getElementsByTagName('a');
@@ -77,7 +77,7 @@ var preview = {
                 }
         },
         preloadImages: function() {
-                var imgList = ["lt.png", "lb.png", "rt.png", "rb.png", "error.gif", "loading.gif"];
+                var imgList = ["lt.png", "lb.png", "rt.png", "rb.png", "loading1.gif"];
                 var imgObj  = document.createElement('img');
 
                 for(var i = 0, img; img = imgList[i]; i++) {
@@ -150,7 +150,7 @@ var preview = {
                 }
 
                 preview.obj.className = positionClass;
-                preview.timer = window.setTimeout("preview.showThumb()",500);
+                preview.timer = window.setTimeout("preview.showThumb()",100);
         },
         showThumb: function(e) {
                 preview.hidden = false;
@@ -162,7 +162,6 @@ var preview = {
 
                 preview.errorTimer = window.setTimeout("preview.imageError()",15000);
                 preview.img.src = 'http://thumbnailspro.com/thumb.php?url=' + encodeURIComponent(addy)+'&s=202&rndm='+parseInt(preview.linkPool[preview.lnk.href]);
-
                 /*@cc_on@*/
                 /*@if(@_win32)
                 return;
