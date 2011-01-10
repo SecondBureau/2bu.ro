@@ -50,5 +50,16 @@ class RedirectionsController < ApplicationController
       redirect_to @redirection.url, { :status => 301 }
     end
   end
+  
+  def indirect
+    @redirection = Redirection.find_by_permalink(params[:permalink])
+    if @redirection.nil?
+      render :text => '404'
+    else
+      @redirection.visits_count += 1
+      @redirection.save
+      render :text => "#{@redirection.url}"
+    end
+  end
 
 end

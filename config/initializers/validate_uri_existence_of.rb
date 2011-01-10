@@ -5,9 +5,9 @@ require 'net/http'
  
 class ActiveRecord::Base
   def self.validates_uri_existence_of(*attr_names)
-    configuration = { :message => "is not valid or not responding", :on => :save, :with => nil }
+    configuration = { :message => "is not valid or not responding", :on => :save, :with => nil, :if => true }
     configuration.update(attr_names.pop) if attr_names.last.is_a?(Hash)
- 
+    raise(ArgumentError, configuration[:if]) 
     raise(ArgumentError, "A regular expression must be supplied as the :with option of the configuration hash") unless configuration[:with].is_a?(Regexp)
     validates_each attr_names do |r, a, v|
         if v.to_s =~ configuration[:with] # check RegExp
