@@ -1,4 +1,5 @@
 require 'uri'
+require 'url_validator'
 
 class Redirection < ActiveRecord::Base
   
@@ -9,7 +10,7 @@ class Redirection < ActiveRecord::Base
   before_validation :unique_permalink
   before_validation :locked_unless_recent
   validates_format_of :permalink, :with => /\A[A-Za-z0-9_]{6,32}\Z/, :message => "6 to 30 letters or numbers only"
-  validates_uri_existence_of :url, :with => /(^$)|(^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$)/ix, :if => :should_validate_url?
+  validates :url, :url => {:with => /(^$)|(^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$)/ix, :if => :should_validate_url? }
   before_save :set_default_values
   before_destroy :is_recent?
   
@@ -19,7 +20,7 @@ class Redirection < ActiveRecord::Base
   end
   
   def should_validate_url?
-    false
+    url_changed?
   end
   
 private
