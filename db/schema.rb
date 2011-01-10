@@ -10,10 +10,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101123034312) do
+ActiveRecord::Schema.define(:version => 20110110010626) do
 
   create_table "redirections", :force => true do |t|
-    t.string   "url"
+    t.text     "url"
     t.string   "permalink"
     t.integer  "visits_count", :default => 0
     t.datetime "created_at"
