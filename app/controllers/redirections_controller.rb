@@ -61,5 +61,9 @@ class RedirectionsController < ApplicationController
       render :text => "#{@redirection.url}",:status => 200
     end
   end
+  
+  def newrelic
+    render :text => "newrelic 2bu.ro OK",:status => 200 
+  end
 
 end
