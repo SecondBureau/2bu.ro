@@ -65,5 +65,9 @@ class RedirectionsController < ApplicationController
   def newrelic
     render :text => "newrelic 2bu.ro OK",:status => 200 
   end
+  
+  def whoami
+    render :text => "2bu.ro : Rails App on #{%x[hostname]}",:status => 200
+  end
 
 end
