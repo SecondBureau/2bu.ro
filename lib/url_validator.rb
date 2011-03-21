@@ -19,7 +19,8 @@ class UrlValidator < ActiveModel::EachValidator
                       #r.errors.add(a, configuration[:message]) and false
                   end
               rescue Exception => e# Recover on DNS failures..
-                  r.errors.add(a, configuration[:message]) and false
+                  #r.errors.add(a, configuration[:message]) and false
+                  true
               end
         else
           r.errors.add(a, configuration[:message]) and false
