@@ -69,5 +69,9 @@ class RedirectionsController < ApplicationController
   def whoami
     render :text => "2bu.ro : Rails App on #{%x[hostname]}",:status => 200
   end
+  
+  def squid
+    render :text => "SecondBureau #{params[:proxy]}",:status => 200 
+  end
 
 end
